@@ -178,7 +178,6 @@ def player_numbers(team)
     result.push(player[:number])
   end
   end
-  result
 end 
 
 def player_stats(player)
