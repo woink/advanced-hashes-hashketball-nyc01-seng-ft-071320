@@ -134,10 +134,6 @@ def player_helper
   Hash[players_aoh.map {|h| [h.delete(:player_name), h]}]
 end
 
-def team_helper
-  game_hash[:home].merge(game_hash[:away])
-end
-
 def num_points_scored(player_name)
   result = 0
   player_helper.each do |k, v|
@@ -168,9 +164,7 @@ end
 
 def team_names
   teams = []
-  teams.push(game_hash[:home][:team_name])
-  teams.push(game_hash[:away][:team_name])
-  teams
+  teams.push(game_hash[:home][:team_name], game_hash[:away][:team_name])
 end 
 
 def player_numbers(team)
